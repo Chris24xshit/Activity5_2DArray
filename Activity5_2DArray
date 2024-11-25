@@ -2,37 +2,30 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        // Create a Scanner object to get user input
+        // Step 1: Create a Scanner to take input
         Scanner scanner = new Scanner(System.in);
 
-        // Prompt the user for the number of rows
+        // Prompt the user for the number of rows and columns
         System.out.print("Enter the number of rows: ");
         int rows = scanner.nextInt();
-
-        // Prompt the user for the number of columns
         System.out.print("Enter the number of columns: ");
         int cols = scanner.nextInt();
 
-        // Create and initialize the 2D array
+        // Step 2: Create and initialize the 2D array
         int[][] array = new int[rows][cols];
-
-        // Fill the array with the product of the row and column indices
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
-                array[i][j] = i * j;
+                array[i][j] = i * j;  // Fill each cell with i * j
             }
         }
 
-        // Print the 2D array
-        System.out.println("Generated 2D Array:");
+        // Step 3: Print the 2D array in a table format
+        System.out.println("Here is the 2D array:");
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
-                System.out.print(array[i][j] + "\t"); // Use tab spacing for alignment
+                System.out.print(array[i][j] + "\t");  // Print each element
             }
-            System.out.println(); // Move to the next row
+            System.out.println();  // Move to the next line after printing one row
         }
-
-        // Close the scanner to prevent resource leaks
-        scanner.close();
     }
 }
