@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        // Create a Scanner object to get user input
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt the user for the number of rows
+        System.out.print("Enter the number of rows: ");
+        int rows = scanner.nextInt();
+
+        // Prompt the user for the number of columns
+        System.out.print("Enter the number of columns: ");
+        int cols = scanner.nextInt();
+
+        // Create and initialize the 2D array
+        int[][] array = new int[rows][cols];
+
+        // Fill the array with the product of the row and column indices
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                array[i][j] = i * j;
+            }
+        }
+
+        // Print the 2D array
+        System.out.println("Generated 2D Array:");
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                System.out.print(array[i][j] + "\t"); // Use tab spacing for alignment
+            }
+            System.out.println(); // Move to the next row
+        }
+
+        // Close the scanner to prevent resource leaks
+        scanner.close();
+    }
+}
